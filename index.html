@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="initial-scale=1, width=device-width" />
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400&display=swap">
+    <link rel="stylesheet" href="./global.css" />
+    <link rel="stylesheet" href="./index.css" />
+    <link rel="shortcut icon" href="./public/amazon.png" type="image/x-icon">
+    <title>Amazon.com.br | Tudo pra você, de A a Z.</title>
+  </head>
+  <body>
+    <a class="desktop-1">
+      <div class="pngwing-4-parent">
+        <img class="pngwing-4-icon" alt="Logo" src="file:///C:/Users/Jonas/OneDrive/Área de Trabalho/Amazon/public/pngwing-4@2x.png" data-link="index.html" />
+
+        <div class="search-container">
+    <div class="frame-child">
+    <input type="text" id="searchInput" placeholder="Digite sua pesquisa">
+    <img class="pesquisa-de-lupa-1-icon" alt="" src="./public/search-2903.png" onclick="realizarPesquisa()">
+    <div id="autocomplete-suggestions"></div>
+  </div>
+</div>
+
+        <div class="ofertas-do-dia" id="ofertas-do-dia">Ofertas do Dia</div>
+        <div class="cartes" id="cartoes">Cartões</div>
+        <div class="cadastre-se" id="cadastre-se">Cadastre-se</div>
+        <div class="frame-item"></div>
+        <div id="login-button" class="pngwing-5-parent">
+          <img class="pngwing-5-icon" alt="Login" src="./public/Login.png" />
+        </div>
+      </div>
+
+      <div class="container-slider" id="image-container">
+        <button id="prev-button"><img src="public/seta.png" alt="prev-button"></button>
+        <div class="container-images">
+          <img id="image-1" class="slider on" src="public/audible.png">
+          <img id="image-2" class="slider" data-link="https://www.audible.com.br" src="public/audible 2.png">
+        </div>
+        <button id="next-button"><img src="public/seta.png" alt="next-button"></button>
+      </div>
+      
+      <div class="captura-de-tela-2023-10-13-095-parent">
+        <img class="imagem-1 captura-de-tela-2023-10-13-095" data-link="https://www.amazon.com.br/s?k=loja+de+compras+internacionais&crid=YIKA3ZKMDTDT&sprefix=loja+de+com%2Caps%2C154&ref=nb_sb_ss_ts-doa-p_1_11" src="./public/captura-de-tela-20231013-095544-1@2x.png" />
+        <img class="imagem-2 captura-de-tela-2023-10-13-100" data-link="https://www.amazon.com.br/s?k=echo+e+fire+tv+com+alexa&__mk_pt_BR=ÅMÅŽÕÑ&crid=3IC528BLP4KBR&sprefix=echo+e+fire+tv+com+alexa%2Caps%2C148&ref=nb_sb_noss" src="./public/captura-de-tela-20231013-100754-1@2x.png" />
+        <img class="imagem-3 captura-de-tela-2023-10-13-102" data-link="https://www.amazon.com.br/s?k=brinquedos+para+pet+até+100&__mk_pt_BR=ÅMÅŽÕÑ&crid=2CSJNUWAUFM06&sprefix=brinquedos+para+pet+até+100%2Caps%2C153&ref=nb_sb_noss" src="./public/captura-de-tela-20231013-102548-1@2x.png" />
+        <img class="imagem-4 captura-de-tela-2023-10-13-1001" data-link="https://www.amazon.com.br/gp/goldbox/?ie=UTF8&pd_rd_w=2H4ew&content-id=amzn1.sym.266fa2a3-ad3a-4411-82e1-a52825fc6f50&pf_rd_p=266fa2a3-ad3a-4411-82e1-a52825fc6f50&pf_rd_r=NRNTQ8DXKQ5CD0HQG20F&pd_rd_wg=DQRMV&pd_rd_r=3d7a9c3c-8fb4-4ad9-be79-8bd6d5aefbb4&ref_=pd_gw_unk" src="./public/captura-de-tela-20231013-100253-1@2x.png" />
+      </div>
+
+      <div class="desktop-1-inner">
+        <div class="frame-parent">
+          <div class="frame-wrapper">
+            <div class="frame-inner"></div>
+          </div>
+
+          <div class="social-icons">
+            <a href="https://www.facebook.com/Amazon.com.br" target="_blank">
+              <img class="pngwing-3-icon" alt="Facebook" src="./public/facebook.png" />
+            </a>
+
+            <a href="https://www.instagram.com/amazonbrasil/?utm_source=ig_web_button_share_sheet&igshid=OGQ5ZDc2ODk2ZA==" target="_blank">
+              <img class="instagram-1-icon" alt="Instagram" src="./public/instagram.png" />
+            </a>
+          </div>
+
+          <div class="amazoncom-inc-ou">
+            © 2021-2023 Amazon.com, Inc. ou suas afiliadas
+          </div>
+          <div class="amazon-servios-de-container">
+            <p class="amazon-servios-de">
+              Amazon Serviços de Varejo do Brasil Ltda. | CNPJ
+              15.436.940/0001-03
+            </p>
+          </div>
+          <div class="av-juscelino-kubitschek">
+            Av. Juscelino Kubitschek, 2041, Torre E, 18° andar - São Paulo CEP:
+            04543-011
+          </div>
+          <div class="formas-de-pagamento-container">
+            <p class="amazon-servios-de">
+              Formas de pagamento aceitas: cartões de crédito (Visa, MasterCard,
+              Elo e American Express), cartões de débito (Visa e Elo), Boleto e
+              Pix.
+            </p>
+          </div>
+        </div>
+      </div>
+    </a>
+  <script type="text/javascript" src="script.js"></script>
+  </body>
+</html>
